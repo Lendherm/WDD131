@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WDD 131 - Web Frontend Development, Luis Emilio Nathanael De la rosa Meneses, course assignment portal, responsive design, frontend development.">
+    <meta name="author" content="Luis Emilio Nathanael De la rosa Meneses">
+    <title>Luis De la Rosa - WDD 131 - Dynamic Web Fundamentals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="scripts/getDates.js" defer></script>
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Luis De la Rosa - WDD 131 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lendherm.github.io/wdd230/images/profile.jpg">
+    <meta property="og:url" content="https://lendherm.github.io/wdd230/">
+    <meta property="og:description"
+        content="Portal del curso WDD 131: Dynamic Web Fundamentals con actividades, aprendizaje y proyectos de Luis Emilio Nathanael De la Rosa Meneses.">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="divheader">
+            <span>WDD 131: Dynamic Web Fundamentals- Luis Emilio Nathanael De la rosa Meneses</span>
+        </div>
+
+        <!-- Menú hamburguesa -->
+        <div id="menu-toggle" class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <nav class="header_nav">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/nathanael-de-la-rosa-november3a21/" class="active">LinkedIn</a>
+                </li>
+                <li><a href="https://byupw.instructure.com/">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures">Scripture</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botón para cambiar de modo -->
+        <div id="mode" class="mode-toggle">
+            🕶️
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección para las actividades de aprendizaje y la información -->
+        <div class="main-content">
+            <section class="card card-profile">
+                <h2>About Me</h2>
+                <div class="profile">
+                    <img src="images/profile.jpg" alt="Foto de perfil de Luis De la rosa">
+                    <div class="profile-info">
+                        <p>My name is Nathanael, I was born in Mexico, I am 25 years old and for the last 2 years I have
+                            been studying technology and programming. I am currently working as a technical support for
+                            Ecolab but I would like a job more focused on programming. What I love the most in the world
+                            is my family and friends.</p>
+                    </div>
+                    <hr>
+                </div>
+
+                <div class="flag-section">
+                    <div class="flag-info">
+                        <p>
+                            Mexico is a country located in the southern part of North America. It is known for its rich
+                            culture, history and biodiversity. Mexico is home to more than 10% of the world's biological
+                            diversity, with a large number of endemic species. The country is famous for its beaches,
+                            ancient ruins such as Chichen Itza, and its gastronomy, recognized as Intangible Cultural
+                            Heritage of Humanity by UNESCO.
+                        </p>
+                    </div>
+                    <img src="images/Flag_of_Mexico.webp" alt="Bandera de México">
+                </div>
+            </section>
+
+            <section class="card card-information">
+                <h2>Web Dev Resources</h2>
+                <ul>
+                    <li><a href="#">Dev.to Community</a></li>
+                    <li><a href="#">Smashing Magazine</a></li>
+                    <li><a href="#">CSS Tricks</a></li>
+                    <li><a href="#">W3 Schools</a></li>
+                    <li><a href="#">Udemy</a></li>
+                    <li><a href="#">Image Placeholder</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Luis Emilio Nathanael De la rosa Meneses, Mexico, wdd131</p>
+        <p id="lastModified"></p>
+    </footer>
+
+
+</body>
+
+</html>
