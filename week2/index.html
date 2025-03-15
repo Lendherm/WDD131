@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WDD 131 - Web Frontend Development, Luis Emilio Nathanael De la rosa Meneses, course assignment portal, responsive design, frontend development.">
+    <meta name="author" content="Luis Emilio Nathanael De la rosa Meneses">
+    <title>Temple</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="scripts/getDates.js" defer></script>
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Luis De la Rosa - WDD 131 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lendherm.github.io/wdd230/images/profile.jpg">
+    <meta property="og:url" content="https://lendherm.github.io/wdd230/">
+    <meta property="og:description"
+        content="Portal del curso WDD 131: Dynamic Web Fundamentals con actividades, aprendizaje y proyectos de Luis Emilio Nathanael De la Rosa Meneses.">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="divheader">
+            <span>Temple Album</span>
+        </div>
+
+        <!-- Menú hamburguesa -->
+        <div id="menu-toggle" class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <nav class="header_nav">
+            <ul>
+                <li><a href="#" class="active">Home</a>
+                </li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+
+        <!-- Botón para cambiar de modo -->
+        <div id="mode" class="mode-toggle">
+            🕶️
+        </div>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+        <div class="parent">
+            <div class="image-card">
+                <img src="./images/campinas_brazil_temple_lds.jpeg" alt="campinas_brazil_temple_lds" class="img1">
+                <span class="image-name">Templo de Campinas, Brazil</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/fukuoka_japan_temple_lds.jpeg" alt="fukuoka_japan_temple_lds" class="img2">
+                <span class="image-name">Templo de Fukuoka, Japan</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/manaus_brazil_temple_lds.jpeg" alt="manaus_brazil_temple_lds" class="img3">
+                <span class="image-name">Templo de Manaus, Brazil</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/mexico_city_temple_lds.jpeg" alt="mexico_city_temple_lds" class="img4">
+                <span class="image-name">Templo de Mexico City</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/puebla_mexico_temple_exterior.jpeg" alt="puebla_mexico_temple" class="img5">
+                <span class="image-name">Templo de Puebla, Mexico</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/recife_brazil_temple_lds.jpeg" alt="recife_brazil_temple_lds" class="img6">
+                <span class="image-name">Templo de Recife, Brazil</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/rio_de_janeiro_brazil_temple.jpeg" alt="rio_de_janeiro_brazil_temple" class="img7">
+                <span class="image-name">Templo de Rio de Janeiro, Brazil</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/sao_paulo_brazil_temple_lds.jpeg" alt="sao_paulo_brazil_temple_lds" class="img8">
+                <span class="image-name">Templo de Sao Paulo Brazil</span>
+            </div>
+            <div class="image-card">
+                <img src="./images/tokyo_japan_temple.jpeg" alt="/tokyo_japan_temple" class="img9">
+                <span class="image-name">Templo de /Tokyo Japan</span>
+            </div>
+        </div>
+    </main> <!-- Footer Section -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Luis Emilio Nathanael De la rosa Meneses, Mexico, wdd131</p>
+        <p id="lastModified"></p>
+    </footer>
+
+
+</body>
+
+</html>
