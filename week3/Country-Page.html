@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agregar Weather Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+
+    <script src="scripts/getDates.js" defer></script>
+    <script src="scripts/weather.js" defer></script>
+    <link rel="stylesheet" href="./css/Country-Page.css">
+    <title>Madagascar</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="country-title">Madagascar</h1>
+        <!-- Botón de la bandera -->
+        <button id="flag-button">
+            <img id="flag-image" src="#" alt="Bandera de Madagascar">
+        </button>
+
+    </header>
+    <div class="header-line"></div>
+    <main class="container">
+        <div class="image-container">
+            <img id="dynamic-image" src="#" alt="Lémures de Madagascar">
+
+            <div id="data-container" class="data">
+                <h2>Datos</h2>
+                <p><strong>Área:</strong> <span id="area">587,041 km²</span></p>
+                <p><strong>Población:</strong> <span id="population">27,691,018</span></p>
+                <p><strong>Capital:</strong> <span id="capital">Antananarivo</span></p>
+                <p><strong>Idiomas:</strong> <span id="languages">Malgache, Francés</span></p>
+                <p><strong>Moneda:</strong> <span id="currency">Ariary Malgache</span></p>
+                <p><strong>Zona Horaria:</strong> <span id="timezone">UTC+3</span></p>
+                <p><strong>Código de Llamada:</strong> <span id="calling-code">+261</span></p>
+                <p><strong>TLD de Internet:</strong> <span id="internet-tld">.mg</span></p>
+            </div>
+
+            <div id="weather-container" class="weather">
+                <h2>Clima</h2>
+                <p><strong>Temperatura:</strong> <span id="temperature">Loading</span></p>
+                <p><strong>Condiciones:</strong> <span id="weather-conditions">Loading</span></p>
+                <p><strong>Viento:</strong> <span id="wind-speed">Loading</span></p>
+                <p><strong>Sensación Térmica:</strong> <span id="feels-like">Loading</span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Luis Emilio Nathanael De la Rosa Meneses, México, WDD131</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script>
+        // Datos de los países
+        const countries = {
+            madagascar: {
+                name: "Madagascar",
+                flag: "images/Flag_of_Madagascar.svg.webp",
+                image: {
+                    desktop: "images/pexels-photo-145977.webp",
+                    mobile: "images/upscalemedia-transformed.webp",
+                },
+                area: "587,041 km²",
+                population: "27,691,018",
+                capital: "Antananarivo",
+                languages: "Malgache, Francés",
+                currency: "Ariary Malgache",
+                timezone: "UTC+3",
+                callingCode: "+261",
+                internetTLD: ".mg",
+            },
+            mexico: {
+                name: "México",
+                flag: "images/descarga.webp",
+                image: {
+                    desktop: "images/mexicopiramide.webp",
+                    mobile: "images/upscalemedia-transformed (1).webp",
+                },
+                area: "1,964,375 km²",
+                population: "126,190,788",
+                capital: "Ciudad de México",
+                languages: "Español",
+                currency: "Peso Mexicano",
+                timezone: "UTC-5 a UTC-6",
+                callingCode: "+52",
+                internetTLD: ".mx",
+            },
+        };
+
+        // Estado inicial
+        let currentCountry = "madagascar";
+
+        // Función para cambiar la información del país
+        function updateCountryInfo(country) {
+            const countryData = countries[country];
+
+            // Actualizar el título
+            document.getElementById("country-title").textContent = countryData.name;
+
+            // Actualizar la bandera
+            document.getElementById("flag-image").src = countryData.flag;
+            document.getElementById("flag-image").alt = `Bandera de ${countryData.name}`;
+
+            // Actualizar la imagen principal (según el modo móvil o escritorio)
+            updateImageBasedOnScreenSize(countryData.image);
+
+            // Actualizar los datos del país
+            document.getElementById("area").textContent = countryData.area;
+            document.getElementById("population").textContent = countryData.population;
+            document.getElementById("capital").textContent = countryData.capital;
+            document.getElementById("languages").textContent = countryData.languages;
+            document.getElementById("currency").textContent = countryData.currency;
+            document.getElementById("timezone").textContent = countryData.timezone;
+            document.getElementById("calling-code").textContent = countryData.callingCode;
+            document.getElementById("internet-tld").textContent = countryData.internetTLD;
+        }
+
+        // Función para cambiar entre países
+        document.getElementById("flag-button").addEventListener("click", function () {
+            if (currentCountry === "madagascar") {
+                currentCountry = "mexico";
+            } else {
+                currentCountry = "madagascar";
+            }
+            updateCountryInfo(currentCountry);
+        });
+
+        // Función para actualizar la imagen según el tamaño de la pantalla
+        function updateImageBasedOnScreenSize(images) {
+            const imageElement = document.getElementById("dynamic-image");
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth <= 768) {
+                imageElement.src = images.mobile; // Imagen para móviles
+            } else {
+                imageElement.src = images.desktop; // Imagen para escritorio
+            }
+        }
+
+        // Función para ajustar el diseño en móviles
+        function adjustLayoutForMobile() {
+            const dataContainer = document.getElementById("data-container");
+            const weatherContainer = document.getElementById("weather-container");
+            const imageContainer = document.querySelector(".image-container");
+            const screenWidth = window.innerWidth;
+
+            // Modo móvil (ancho ≤ 768px)
+            if (screenWidth <= 768) {
+                // Mueve los contenedores de datos y clima debajo de la imagen
+                imageContainer.after(dataContainer, weatherContainer);
+
+                // Ajusta los estilos para móviles
+                dataContainer.style.marginTop = "20px";
+                dataContainer.style.backgroundColor = "transparent";
+                dataContainer.style.boxShadow = "none";
+                dataContainer.style.borderRadius = "0";
+                dataContainer.style.padding = "0";
+
+                weatherContainer.style.marginTop = "20px";
+                weatherContainer.style.backgroundColor = "transparent";
+                weatherContainer.style.boxShadow = "none";
+                weatherContainer.style.borderRadius = "0";
+                weatherContainer.style.padding = "0";
+            } else {
+                // Restaura la posición y estilos originales en escritorio
+                imageContainer.append(dataContainer, weatherContainer);
+
+                dataContainer.style.marginTop = "0";
+                dataContainer.style.backgroundColor = "rgba(255, 255, 255, 0.85)";
+                dataContainer.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+                dataContainer.style.borderRadius = "10px";
+                dataContainer.style.padding = "20px";
+
+                weatherContainer.style.marginTop = "0";
+                weatherContainer.style.backgroundColor = "rgba(255, 255, 255, 0.85)";
+                weatherContainer.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+                weatherContainer.style.borderRadius = "10px";
+                weatherContainer.style.padding = "20px";
+            }
+        }
+
+        // Inicializar la página con los datos de Madagascar
+        updateCountryInfo(currentCountry);
+
+        // Ejecutar funciones al cargar y redimensionar la ventana
+        window.addEventListener("load", () => {
+            adjustLayoutForMobile();
+            updateImageBasedOnScreenSize(countries[currentCountry].image);
+        });
+        window.addEventListener("resize", () => {
+            adjustLayoutForMobile();
+            updateImageBasedOnScreenSize(countries[currentCountry].image);
+        });
+    </script>
+</body>
+
+</html>
