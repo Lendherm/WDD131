@@ -25,6 +25,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const lastModifiedElement = document.getElementById("lastModified");
     lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
 
+    // Obtener el botón de modo oscuro y el elemento body
+    const modeButton = document.querySelector("#mode");
+    const body = document.querySelector("body");
+
+    // Event listener para cambiar entre modo claro y oscuro
+// Event listener para cambiar entre modo claro y oscuro
+modeButton.addEventListener("click", () => {
+    // Alternar la clase dark-mode en el body
+    body.classList.toggle("dark-mode");
+    
+    // Guardar preferencia en localStorage
+    localStorage.setItem("darkMode", body.classList.contains("dark-mode"));
+});
+
+// Verificar preferencia guardada al cargar la página
+if (localStorage.getItem("darkMode") === "true") {
+    body.classList.add("dark-mode");
+}
+
     // Contador de visitas de la página
     const visitsElement = document.getElementById("visits");
     if (visitsElement) {
