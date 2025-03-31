@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WDD 131 - Web Frontend Development, Luis Emilio Nathanael De la rosa Meneses, course assignment portal, responsive design, frontend development.">
+    <meta name="author" content="Luis Emilio Nathanael De la rosa Meneses">
+    <title>Temple Filter</title>
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getDates.js" defer></script>
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Luis De la Rosa - WDD 131 - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lendherm.github.io/wdd230/images/profile.jpg">
+    <meta property="og:url" content="https://lendherm.github.io/wdd230/">
+    <meta property="og:description"
+        content="Portal del curso WDD 131: Dynamic Web Fundamentals con actividades, aprendizaje y proyectos de Luis Emilio Nathanael De la Rosa Meneses.">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="divheader">
+            <span>Temple Album</span>
+        </div>
+
+        <!-- Hamburger menu -->
+        <div id="menu-toggle" class="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <nav class="header_nav">
+            <ul>
+                <li><a href="#" class="active" data-filter="all">Home</a></li>
+                <li><a href="#" data-filter="old">Old</a></li>
+                <li><a href="#" data-filter="new">New</a></li>
+                <li><a href="#" data-filter="large">Large</a></li>
+                <li><a href="#" data-filter="small">Small</a></li>
+            </ul>
+        </nav>
+
+        <!-- Dark mode toggle -->
+        <div id="mode" class="mode-toggle">
+            🕶️
+        </div>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+        <div class="parent" id="temple-container">
+            <!-- Temple cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Luis Emilio Nathanael De la rosa Meneses, Mexico, wdd131</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>
